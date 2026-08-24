@@ -237,14 +237,13 @@ adb shell am start -n com.velion.dvma/.m4 `
 
 ```powershell
 # Inyectar payload HTML/JS en el campo de búsqueda
-adb shell am start -n com.velion.dvma/.m4 `
-  --es query "<img src=x onerror=alert(document.cookie)>"
+adb shell "am start -n com.velion.dvma/.m4 --es query '<h1>XSS</h1>'"
 
 # Luego pulsar "Buscar referencia de transferencia"
 # El valor de query se concatena directamente en el HTML sin escapar
 ```
 
-**Resultado esperado:** el WebView ejecuta el script; se muestra el alert con cookies/storage.
+**Resultado esperado:** el WebView ejecuta el html; se muestra el resultado de h1.
 
 ---
 
