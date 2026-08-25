@@ -20,7 +20,7 @@
 | `hashcat` | Descargar binario desde hashcat.net/hashcat (hashcat-6.x.x.7z) |
 | `Android Backup Extractor` (`abe.jar`) | github.com/nelenkov/android-backup-extractor |
 | `Root Emulator` | https://gitlab.com/newbit/rootAVD |
-| `` | https://gitlab.com/newbit/rootAVD |
+| `slythestx` | https://github.com/stuxctf/slythestx |
 
 
 
@@ -627,3 +627,4 @@ print(pt[:-pt[-1]])
 
 -----------------------------------------
 
+adb shell getprop ro.product.cpu.abi
