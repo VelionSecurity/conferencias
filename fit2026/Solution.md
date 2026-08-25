@@ -18,7 +18,34 @@
 | `sqlite3` | Descargar binario desde sqlite.org/download (sqlite-tools-win-x64) → añadir al PATH |
 | `Python 3` + `pycryptodome` | python.org → luego `pip install pycryptodome` |
 | `hashcat` | Descargar binario desde hashcat.net/hashcat (hashcat-6.x.x.7z) |
-| Android Backup Extractor (`abe.jar`) | github.com/nelenkov/android-backup-extractor |
+| `Android Backup Extractor` (`abe.jar`) | github.com/nelenkov/android-backup-extractor |
+| `Root Emulator` | https://gitlab.com/newbit/rootAVD |
+| `` | https://gitlab.com/newbit/rootAVD |
+
+
+
+# 1. Clonar el repositorio oficial
+git clone https://gitlab.com/newbit/rootAVD.git
+cd rootAVD
+
+# 2. Con el AVD ya iniciado desde Android Studio, listar AVDs disponibles
+#    (esto imprime el comando exacto a usar para cada AVD instalado)
+./rootAVD.sh ListAllAVDs        # Mac/Linux
+rootAVD.bat ListAllAVDs         # Windows
+
+# 3. Ejecutar rootAVD apuntando al ramdisk.img del AVD deseado
+#    (la ruta exacta la da el paso anterior, varía según API level y ABI)
+./rootAVD.sh system-images/android-34/google_apis_playstore/arm64-v8a/ramdisk.img
+
+# 4. Reiniciar el AVD manualmente desde Android Studio (Cold Boot recomendado)
+#    Abrir la app "Magisk" dentro del emulador y confirmar el reboot final
+
+# 5. Verificar que el root quedó activo
+adb shell su
+# el prompt debe cambiar de "$" a "#" y aparecer el popup de Magisk
+# pidiendo autorizar el acceso root -> Grant
+
+
 
 ### Wrapper para apktool en Windows
 
@@ -596,3 +623,7 @@ print(pt[:-pt[-1]])
 | M8 | `adb shell am start`, `abe.jar` + `tar` | `.AdminActivity` directo + backup extract |
 | M9 | `adb shell run-as`, `sqlite3` | `--es ref "x' OR 1=1 --"` |
 | M10 | `jadx` + `Select-String`, Python + `hashcat.exe` | Clave `VelionLabKey2026` + IV `\x00*16` |
+
+
+-----------------------------------------
+
