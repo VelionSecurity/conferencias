@@ -21,7 +21,7 @@
 | `Android Backup Extractor` (`abe.jar`) | github.com/nelenkov/android-backup-extractor |
 | `Root Emulator` | https://gitlab.com/newbit/rootAVD |
 | `slythestx` | https://github.com/stuxctf/slythestx |
-
+| `GDA` | https://github.com/charles2gan/GDA-android-reversing-Tool/releases/download/GDA4.12/gda4.12.zip |
 
 
 # 1. Clonar el repositorio oficial
