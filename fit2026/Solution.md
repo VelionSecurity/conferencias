@@ -45,7 +45,50 @@ adb shell su
 # el prompt debe cambiar de "$" a "#" y aparecer el popup de Magisk
 # pidiendo autorizar el acceso root -> Grant
 
+---- 
 
+# Conexión y Estado
+
+adb devices
+
+# Muestra la lista de dispositivos conectados a la computadora (emuladores o teléfonos físicos con la depuración USB activa).
+
+adb connect <dirección_ip>
+
+# Permite conectarse a un dispositivo de forma inalámbrica a través de su dirección IP.
+
+adb disconnect
+
+# Desconecta todos los dispositivos conectados de forma inalámbrica.
+
+📦 Gestión de Aplicaciones (APK)
+adb install <ruta_del_archivo.apk>
+
+# Instala una aplicación en el dispositivo conectado.
+
+adb install -r <ruta_del_archivo.apk>
+
+# Reinstala o actualiza una aplicación existente sin perder sus datos.
+
+adb uninstall <nombre_del_paquete>
+
+# Desinstala una aplicación (ej. adb uninstall com.whatsapp).
+
+adb shell pm list packages
+
+# Muestra una lista con los nombres de todos los paquetes de aplicaciones instaladas en el dispositivo.
+
+📁 Transferencia de Archivos
+adb push <ruta_local> <ruta_remota>
+
+# Copia un archivo desde tu computadora hacia el dispositivo Android.
+
+adb pull <ruta_remota> <ruta_local>
+
+# Copia un archivo desde el dispositivo Android hacia tu computadora.
+
+adb shell getprop ro.product.cpu.abi
+# archiqtectura del dispostivo/emulador corriendo
 
 ### Wrapper para apktool en Windows
 
@@ -627,4 +670,3 @@ print(pt[:-pt[-1]])
 
 -----------------------------------------
 
-adb shell getprop ro.product.cpu.abi
